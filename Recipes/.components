@@ -1,0 +1,10 @@
+---
+:orm: activerecord
+:test: shoulda
+:mock: none
+:script: none
+:renderer: erb
+:stylesheet: none
+:namespace: Recipes
+:migration_format: number
+:admin_renderer: erb

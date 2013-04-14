@@ -1,0 +1,57 @@
+<% error = @recipe.errors.include?(:name) %>
+<fieldset class='control-group <%= error ? 'has-error' : ''%>'>
+  <%= f.label :name, :class => 'control-label' %>
+  <div class='controls'>
+    <%= f.text_area :name, :class => 'input-xlarge input-with-feedback', :autofocus => true %>
+    <span class='help-inline'><%= error ? f.error_message_on(:name) : "Ex: a simple text" %></span>
+  </div>
+</fieldset>
+<% error = @recipe.errors.include?(:cook_time) %>
+<fieldset class='control-group <%= error ? 'has-error' : ''%>'>
+  <%= f.label :cook_time, :class => 'control-label' %>
+  <div class='controls'>
+    <%= f.text_field :cook_time, :class => 'input-xlarge input-with-feedback' %>
+    <span class='help-inline'><%= error ? f.error_message_on(:cook_time) : "Ex: a simple text" %></span>
+  </div>
+</fieldset>
+<% error = @recipe.errors.include?(:instruction) %>
+<fieldset class='control-group <%= error ? 'has-error' : ''%>'>
+  <%= f.label :instruction, :class => 'control-label' %>
+  <div class='controls'>
+    <%= f.text_area :instruction, :class => 'input-xlarge input-with-feedback' %>
+    <span class='help-inline'><%= error ? f.error_message_on(:instruction) : "Ex: a simple text" %></span>
+  </div>
+</fieldset>
+<% error = @recipe.errors.include?(:ingredient_id) %>
+<fieldset class='control-group <%= error ? 'has-error' : ''%>'>
+  <%= f.label :ingredient_id, :class => 'control-label' %>
+  <div class='controls'>
+    <%= f.text_field :ingredient_id, :class => 'input-xlarge input-with-feedback' %>
+    <span class='help-inline'><%= error ? f.error_message_on(:ingredient_id) : "Ex: a simple text" %></span>
+  </div>
+</fieldset>
+<% error = @recipe.errors.include?(:category_id) %>
+<fieldset class='control-group <%= error ? 'has-error' : ''%>'>
+  <%= f.label :category_id, :class => 'control-label' %>
+  <div class='controls'>
+    <%= f.text_field :category_id, :class => 'input-xlarge input-with-feedback' %>
+    <span class='help-inline'><%= error ? f.error_message_on(:category_id) : "Ex: a simple text" %></span>
+  </div>
+</fieldset>
+<% error = @recipe.errors.include?(:comment_id) %>
+<fieldset class='control-group <%= error ? 'has-error' : ''%>'>
+  <%= f.label :comment_id, :class => 'control-label' %>
+  <div class='controls'>
+    <%= f.text_field :comment_id, :class => 'input-xlarge input-with-feedback' %>
+    <span class='help-inline'><%= error ? f.error_message_on(:comment_id) : "Ex: a simple text" %></span>
+  </div>
+</fieldset>
+
+
+<div class="form-actions">
+  <%= f.submit pat(:save), :class => 'btn btn-primary' %>
+  &nbsp;
+  <%= f.submit pat(:save_and_continue), :class => 'btn btn-info', :name => 'save_and_continue' %>
+  &nbsp;
+  <%= link_to pat(:cancel), url(:recipes, :index), :class => 'btn' %>
+</div>
